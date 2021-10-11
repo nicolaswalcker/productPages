@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corebiz.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/splide.min.css" />
+  </head>
+  <body>
+    <header class="c-header">
+      <img
+        class="c-header__image"
+        src="./public/img/site-logo-corebiz-preto-cinza-grande.svg"
+        alt="Logo corebiz"
+      />
+      <input
+        type="search"
+        name="search"
+        id="search"
+        class="c-header__search"
+        placeholder="O que está procurando?"
+      />
+      <a class="c-account__button" href="#">
+        <i class="far fa-user"></i>
+        <p class="c-account__text">Minha Conta</p>
+      </a>
+      <div class="c-cart">
+        <img
+          src="./public/img/shopping-cart.svg"
+          alt="Shopping cart"
+          class="c-cart__image"
+        />
+        <span class="c-cart__number">0</span>
+      </div>
+    </header>
+    <main class="l-main">
+      <div class="c-banner-carousel">
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="/public/img/Banner.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="/public/img/Banner.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="/public/img/Banner.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <section class="c-products">
+        <div class="splide2">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="c-product">
+                  <img src="#" alt="#" class="c-product__image" />
+                  <div class="c-product__infos">
+                    <h2 class="c-product__name">Sapato floater preto</h2>
+                    <img src="#" alt="#" />
+                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
+                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
+                  </div>
+                  <button class="c-product__buy">COMPRAR</button>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="c-product">
+                  <img src="#" alt="#" class="c-product__image" />
+                  <div class="c-product__infos">
+                    <h2 class="c-product__name">Sapato floater preto</h2>
+                    <img src="#" alt="#" />
+                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
+                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
+                  </div>
+                  <button class="c-product__buy">COMPRAR</button>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="c-product">
+                  <img src="#" alt="#" class="c-product__image" />
+                  <div class="c-product__infos">
+                    <h2 class="c-product__name">Sapato floater preto</h2>
+                    <img src="#" alt="#" />
+                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
+                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
+                  </div>
+                  <button class="c-product__buy">COMPRAR</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="c-newsletter">
+        <form action="">
+          <input type="text" placeholder="Digite seu nome" />
+          <input type="email" placeholder="Digite seu email" />
+          <button type="submit">Eu quero!</button>
+        </form>
+      </section>
+    </main>
+    <footer class="l-footer">
+      <section class="c-localization">
+        <h3 class="c-localization__title">Localização</h3>
+        <div class="c-line"></div>
+        <p class="c-localization__item">Avenida Andrômeda, 2000. Bloco 6 e 8</p>
+        <p class="c-localization__item">Alphavile SP</p>
+        <p class="c-localization__item">brasil@corebiz.ag</p>
+        <p class="c-localization__item">+55 11 3090 1039</p>
+      </section>
+      <section class="c-footer__cta">
+        <a href="#" class="c-button">Entre em contato</a>
+        <a href="#" class="c-button">FALE COM O NOSSO CONSULTOR ONLINE </a>
+      </section>
+      <section class="c-footer__partners">
+        <div class="c-part__box">
+          <p class="c-part__text">Created by</p>
+          <img src="/public/img/site-logo-corebiz-preto-cinza.svg" alt="" class="c-part__image">
+        </div>
+        <div class="c-part__box">
+          <p class="c-part__text">Powered by</p>
+          <img src="/public/img/vtex.svg" alt="" class="c-part__image">
+        </div>
+      </section>
+    </footer>
+    <script src="./src/js/splide.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".splide").mount();
+      });
+      Splide.defaults = {
+        type: "loop",
+        arrows: false,
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".splide2").mount();
+      });
+      Splide.defaults = {
+        type: "loop",
+        arrows: true,
+        pagination: false,
+        perPage: 4,
+      };
+    </script>
+  </body>
+</html>

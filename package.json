@@ -5,7 +5,5 @@
   "main": "index.js",
   "author": "nicolaswalcker <walcker_@outlook.com>",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^0.22.0"
-  }
+  "dependencies": {}
 }
