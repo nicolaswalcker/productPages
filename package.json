@@ -1,0 +1,11 @@
+{
+  "name": "productsPage",
+  "version": "1.0.0",
+  "description": "Simple page that consumes a few apis",
+  "main": "index.js",
+  "author": "nicolaswalcker <walcker_@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.22.0"
+  }
+}
