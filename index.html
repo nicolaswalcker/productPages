@@ -18,7 +18,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/styles/splide.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"
+    />
   </head>
   <body>
     <header class="c-header">
@@ -44,76 +51,24 @@
           alt="Shopping cart"
           class="c-cart__image"
         />
-        <span class="c-cart__number">0</span>
+        <span class="c-cart__number js-cart__number">0</span>
       </div>
     </header>
     <main class="l-main">
-      <div class="c-banner-carousel">
-        <div class="splide">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img src="/public/img/Banner.jpg" alt="" />
-              </li>
-              <li class="splide__slide">
-                <img src="/public/img/Banner.jpg" alt="" />
-              </li>
-              <li class="splide__slide">
-                <img src="/public/img/Banner.jpg" alt="" />
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="carousel">
+        <div><img src="/public/img/Banner.jpg" alt="" /></div>
+        <div><img src="/public/img/Banner.jpg" alt="" /></div>
+        <div><img src="/public/img/Banner.jpg" alt="" /></div>
       </div>
       <section class="c-products">
-        <div class="splide2">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <div class="c-product">
-                  <img src="#" alt="#" class="c-product__image" />
-                  <div class="c-product__infos">
-                    <h2 class="c-product__name">Sapato floater preto</h2>
-                    <img src="#" alt="#" />
-                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
-                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
-                  </div>
-                  <button class="c-product__buy">COMPRAR</button>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="c-product">
-                  <img src="#" alt="#" class="c-product__image" />
-                  <div class="c-product__infos">
-                    <h2 class="c-product__name">Sapato floater preto</h2>
-                    <img src="#" alt="#" />
-                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
-                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
-                  </div>
-                  <button class="c-product__buy">COMPRAR</button>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="c-product">
-                  <img src="#" alt="#" class="c-product__image" />
-                  <div class="c-product__infos">
-                    <h2 class="c-product__name">Sapato floater preto</h2>
-                    <img src="#" alt="#" />
-                    <p class="c-product__prize"><span>por</span>R$ 259,90</p>
-                    <p class="c-product__divide">ou em 9x de R$ 28,87</p>
-                  </div>
-                  <button class="c-product__buy">COMPRAR</button>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="carousel2">
         </div>
       </section>
       <section class="c-newsletter">
-        <form action="">
-          <input type="text" placeholder="Digite seu nome" />
-          <input type="email" placeholder="Digite seu email" />
-          <button type="submit">Eu quero!</button>
+        <form class="c-form" action="https://corebiz-test.herokuapp.com/api/v1/newsletter" method="POST" enctype="multipart/form-data">
+          <input class="c-input__name" type="text" placeholder="Digite seu nome" />
+          <input class="c-input__mail" type="email" placeholder="Digite seu email" />
+          <button class="js-submit__button" type="submit">Eu quero!</button>
         </form>
       </section>
     </main>
@@ -133,34 +88,36 @@
       <section class="c-footer__partners">
         <div class="c-part__box">
           <p class="c-part__text">Created by</p>
-          <img src="/public/img/site-logo-corebiz-preto-cinza.svg" alt="" class="c-part__image">
+          <img
+            src="/public/img/site-logo-corebiz-preto-cinza.svg"
+            alt=""
+            class="c-part__image"
+          />
         </div>
         <div class="c-part__box">
           <p class="c-part__text">Powered by</p>
-          <img src="/public/img/vtex.svg" alt="" class="c-part__image">
+          <img src="/public/img/vtex.svg" alt="" class="c-part__image" />
         </div>
       </section>
     </footer>
-    <script src="./src/js/splide.min.js"></script>
+    <script src="src/js/Products/products.js"></script>
+    <script src="src/js/newsletter.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Splide(".splide").mount();
+      $(".carousel").slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
       });
-      Splide.defaults = {
-        type: "loop",
-        arrows: false,
-      };
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Splide(".splide2").mount();
+      $(".carousel2").slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
       });
-      Splide.defaults = {
-        type: "loop",
-        arrows: true,
-        pagination: false,
-        perPage: 4,
-      };
     </script>
   </body>
 </html>
