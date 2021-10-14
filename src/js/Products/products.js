@@ -84,7 +84,7 @@ window.addEventListener("load", (e) => {
           $(".c-products__carousel").slick("slickAdd", productCard);
         });
       })
-      .catch((e) => console.error(e.message));
+      .catch((e) => alert(e.message));
   });
 });
 
