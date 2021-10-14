@@ -61,7 +61,7 @@
         <div><img src="/public/img/Banner.jpg" alt="" /></div>
       </div>
       <section class="c-products">
-        <div class="carousel2">
+        <div class="c-products__carousel">
         </div>
       </section>
       <section class="c-newsletter">
@@ -111,10 +111,11 @@
         infinite: true,
         speed: 500,
         slidesToShow: 1,
+        arrows: false,
       });
-      $(".carousel2").slick({
+      $(".c-products__carousel").slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 4,
       });

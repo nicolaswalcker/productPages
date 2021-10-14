@@ -1,4 +1,3 @@
-const slideItem = document.querySelector(".carousel2");
 const cartNumber = document.querySelector(".js-cart__number");
 const stars = document.querySelectorAll(".js-star");
 const url = "https://corebiz-test.herokuapp.com/api/v1/products";
@@ -10,51 +9,79 @@ const starNonFilled = `<svg width="12" height="11" viewBox="0 0 12 11" fill="non
 </svg>`;
 var cartItems = localStorage.getItem("cartItems");
 cartNumber.textContent = cartItems;
-
 window.addEventListener("load", (e) => {
   fetch(url).then((response) => {
     response
       .json()
       .then((data) => {
-        data.forEach((produto) => {
-          valor = produto.price;
-          function numberToReal(valor) {
-            if (valor != null) {
-              valor = valor.toString().replace(/\D/g, "");
-              valor = valor.toString().replace(/(\d)(\d{8})$/, "$1.$2");
-              valor = valor.toString().replace(/(\d)(\d{5})$/, "$1.$2");
-              valor = valor.toString().replace(/(\d)(\d{2})$/, "$1,$2");
-              return "R$ " + valor;
+        data.forEach((product) => {
+          let {
+            productId: productId,
+            productName: productName,
+            stars: productStars,
+            imageUrl: productImage,
+            listPrice: productListPrice,
+            price: productPrice,
+          } = product;
+          console.log(productPrice);
+          const numberToReal = (value) => {
+            if (value != null) {
+              value = value.toString().replace(/(\d)(\d{2})$/, "$1,$2");
+              return "R$ " + value;
             }
-          }
+          };
           var productCard = `
-          <div>
-              <img src='${produto.imageUrl}'/>
-              <p>${produto.productName}</p>
-              <ul>
-                <li> ${produto.stars > 0 ? starFilled : starNonFilled} </li>
-                <li> ${produto.stars > 1 ? starFilled : starNonFilled} </li>
-                <li> ${produto.stars > 2 ? starFilled : starNonFilled} </li>
-                <li> ${produto.stars > 3 ? starFilled : starNonFilled} </li>
-                <li> ${produto.stars > 4 ? starFilled : starNonFilled} </li>
+          <div class="c-product">
+              <img class="c-product__image" src='${productImage}'/>
+              <h2 class="c-product__name">${productName}</h2>
+              <ul class="c-product__stars>
+                <li class="c-product__star"> ${
+                  productStars > 0 ? starFilled : starNonFilled
+                } </li>
+                <li class="c-product__star"> ${
+                  productStars > 1 ? starFilled : starNonFilled
+                } </li>
+                <li class="c-product__star"> ${
+                  productStars > 2 ? starFilled : starNonFilled
+                } </li>
+                <li class="c-product__star"> ${
+                  productStars > 3 ? starFilled : starNonFilled
+                } </li>
+                <li class="c-product__star"> ${
+                  productStars > 4 ? starFilled : starNonFilled
+                } </li>
               </ul>
-              <p>${numberToReal(valor)}</p>
-              <p>${
-                produto.listPrice != null ? numberToReal(produto.listPrice) : ""
-              }</p>
-              <p>${
-                produto.installments.length > 0
-                  ? produto.installments[0].quantity
+              <p class="${
+                productListPrice == null
+                  ? "c-principal__prize"
+                  : "c-secondary__prize"
+              }">${
+            productListPrice == null
+              ? "<span class='c-product__text'>por </span>" +
+                numberToReal(productPrice)
+              : "<span class='c-product__text'>de </span>" +
+                numberToReal(productPrice)
+          }</p>
+
+              <p class="c-principal__prize">${
+                productListPrice != null
+                  ? "<span class='c-product__text'>por </span>" +
+                    numberToReal(productListPrice)
                   : ""
               }</p>
-              <p>${
-                produto.installments.length > 0
-                  ? numberToReal(produto.installments[0].value)
+              <p class="c-product__installment-quantity">${
+                product.installments.length > 0
+                  ? product.installments[0].quantity
                   : ""
               }</p>
-              <button onclick="buyItem()">COMPRAR</button>
+              <p class="c-product__installment-value">${
+                product.installments.length > 0
+                  ? numberToReal(product.installments[0].value)
+                  : ""
+              }</p>
+              <button class="c-button" onclick="buyItem()">COMPRAR</button>
           </div>`;
-          $(".carousel2").slick("slickAdd", productCard);
+          $(".c-products__carousel").slick("slickAdd", productCard);
         });
       })
       .catch((e) => console.error(e.message));
