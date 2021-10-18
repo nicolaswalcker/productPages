@@ -137,7 +137,7 @@ body {
 .c-mobile__menu {
   display: none;
   height: 0;
-  transition: .5s all ease;
+  transition: 0.5s all ease;
 }
 .c-mobile__menu.u-menu__active {
   z-index: 10;
@@ -151,7 +151,7 @@ body {
   justify-content: flex-start;
   padding: 7rem 0;
   gap: 0.2rem;
-  transition: .5s all ease;
+  transition: 0.5s all ease;
 }
 .c-mobile__link {
   width: 100%;
@@ -165,28 +165,180 @@ body {
     background: $purple;
   }
 }
-
-/* Style main */
-.c-banner__carousel{
-  .c-banner__image{
+/* Style banner */
+.c-banner__carousel {
+  .c-banner__image {
+    object-fit: cover;
+    width: 100vw;
     height: 200px;
   }
   @media (min-width: 950px) {
-    .c-banner__image{
+    .c-banner__image {
+      width: 100vw;
       height: 400px;
     }
   }
 }
-.slick-dots{
+.slick-track{
+  padding: 0 !important;
+}
+.slick-dots {
   bottom: 0;
 }
-.slick-dots li button:before{
+.slick-dots li button:before {
   color: $white;
-  opacity: .75;
-  font-size: .75rem;
+  opacity: 0.75;
+  font-size: 0.75rem;
   line-height: 0;
 }
-.slick-dots li.slick-active button:before{
+.slick-dots li.slick-active button:before {
   color: $white;
-  opacity: .5;
+  opacity: 0.5;
+}
+/* Style products */
+.c-products {
+  margin: 0 auto;
+  padding: 0rem .5rem;
+  @media (min-width: 950px) {
+    padding: 0rem 1rem;
+    width: 80%;
+  }
+}
+.c-section__title-text {
+  font-weight: 900;
+  position: relative;
+  &::before {
+    content: "";
+    width: 65px;
+    height: 5px;
+    background: #c0c0c0;
+    position: absolute;
+    top: 110%;
+  }
+}
+.slick-prev:before,
+.slick-next:before {
+  color: $black;
+}
+.c-product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.c-product__image {
+  object-fit: cover;
+  max-width: 100%;
+}
+.c-product__infos {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  padding: 0.5rem 1rem;
+  grid-template-rows: 35px 20px 10px 35px 35px 35px;
+  grid-template-areas:
+    "name"
+    "stars"
+    "secondary_prize"
+    "principal_prize"
+    "installment"
+    "button";
+  &:hover {
+    background: #e6e8ea;
+  }
+  @media (min-width: 950px) {
+    width: 80%;
+    grid-template-rows: 25px 15px 10px 35px 35px 35px;
+  }
+}
+.c-product__name {
+  font-size: 0.75rem;
+  color: $gray;
+  grid-area: name;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.c-product__infos ul {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  grid-area: stars;
+}
+.c-secondary__prize {
+  grid-area: secondary_prize;
+  text-align: center;
+}
+.c-product__installment {
+  grid-area: installment;
+  text-align: center;
+}
+.c-secondary__prize,
+.c-product__installment {
+  font-weight: regular;
+  color: $gray;
+  font-size: 0.75rem;
+}
+.c-principal__prize {
+  grid-area: principal_prize;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.slick-initialized .slick-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.c-button{
+  color: $white;
+  background: $black;
+  font-weight: bold;
+  border: none;
+  padding: 0 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.c-product__infos .c-button {
+  grid-area: button;
+  display: none;
+}
+.c-product__infos:hover .c-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s all ease;
+  &:hover{
+    transform: skew(15deg);
+  }
+}
+.c-off{
+  top: 0;
+  right: 0;
+  position: absolute;
+  font-weight: bold;
+  background-color: $purple;
+  clip-path: polygon(65% 0, 100% 35%, 100% 0);
+  width: 200px;
+  height: 200px;
+  &::before{
+    content: "OFF";
+    color: $white;
+    top: 15px;
+    right: 5px;
+    position: absolute;
+    font-weight: 900;
+  }
+  
+}
+.slick-slide {
+  margin: 0 5px;
 }

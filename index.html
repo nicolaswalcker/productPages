@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -139,16 +139,37 @@
       $(".c-banner__carousel").slick({
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 400,
         slidesToShow: 1,
         arrows: false,
-        adaptiveHeight: true,
       });
       $(".c-products__carousel").slick({
         dots: false,
         infinite: false,
-        speed: 500,
-        slidesToShow: 1,
+        speed: 400,
+        slidesToShow: 4,
+        arrows: true,
+        prevArrow:
+          "<img class='a-left control-c prev slick-prev' src='./public/img/left_arrow.svg'>",
+        nextArrow:
+          "<img class='a-right control-c next slick-next' src='./public/img/right_arrow.svg'>",
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 3,
+            },
+          },
+          {
+            breakpoint: 724,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              arrows: false,
+            },
+          },
+        ],
       });
     </script>
   </body>

@@ -31,6 +31,7 @@ window.addEventListener("load", (e) => {
           };
           var productCard = `
           <div class="c-product">
+              ${productListPrice ? "<div class='c-off'></div>" : ""}
               <img class="c-product__image" src='${productImage}'/>
               <div class="c-product__infos">
                 <h2 class="c-product__name">${productName}</h2>
@@ -54,7 +55,7 @@ window.addEventListener("load", (e) => {
                 <p class="${
                   productListPrice == null
                     ? "c-principal__prize"
-                    : "c-secondary__prize"
+                    : "c-secondary__prize" 
                 }">${
               productListPrice == null
                 ? "<span class='c-product__text'>por </span>" +
@@ -81,8 +82,9 @@ window.addEventListener("load", (e) => {
                     : ""
                 }</span>
                 </p>
+                <button class="c-button" onclick="buyItem()">COMPRAR</button>
               </div>
-              <button class="c-button" onclick="buyItem()">COMPRAR</button>
+              
           </div>`;
           $(".c-products__carousel").slick("slickAdd", productCard);
         });
