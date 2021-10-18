@@ -8,7 +8,7 @@ const starNonFilled = `<svg width="12" height="11" viewBox="0 0 12 11" fill="non
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3896 4.4595L7.29501 4.13318L5.69478 0.648972L4.09454 4.13845L0 4.4595L3.10935 6.94897L2.17541 10.649L5.69478 8.68581L9.21415 10.649L8.2859 6.94897L11.3896 4.4595ZM5.69479 7.7016L3.55355 8.89634L4.12303 6.64371L2.23236 5.12792L4.72667 4.92792L5.69479 2.80687L6.66859 4.93318L9.1629 5.13318L7.27224 6.64897L7.84172 8.9016L5.69479 7.7016Z" fill="#F8475F"/>
 </svg>`;
 var cartItems = localStorage.getItem("cartItems");
-cartNumber.textContent = cartItems;
+cartNumber.textContent = cartItems > 0 ? cartItems : 0;
 window.addEventListener("load", (e) => {
   fetch(url).then((response) => {
     response
@@ -23,7 +23,6 @@ window.addEventListener("load", (e) => {
             listPrice: productListPrice,
             price: productPrice,
           } = product;
-          console.log(productPrice);
           const numberToReal = (value) => {
             if (value != null) {
               value = value.toString().replace(/(\d)(\d{2})$/, "$1,$2");
