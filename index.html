@@ -88,16 +88,22 @@
           method="POST"
           enctype="multipart/form-data"
         >
-        <input
-            class="c-input js-name"
-            type="text"
-            placeholder="Digite seu nome"
-          />
+        <div class="c-input__container">
           <input
+          class="c-input js-name"
+          type="text"
+          placeholder="Digite seu nome"
+        />
+        <small class="c-small js-small__name">Preencha seu nome completo!</small>
+        </div>
+          <div class="c-input__container">
+            <input
             class="c-input js-mail"
             type="email"
             placeholder="Digite seu email"
           />
+          <small class="c-small js-small__email">Preencha com um e-mail válido!</small>
+          </div>
           <button class="c-button js-submit__button" type="submit">Eu quero!</button>
         </form>
       </section>

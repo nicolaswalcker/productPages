@@ -358,14 +358,25 @@ body {
     height: 50px;
     width: 90%;
   }
+  .c-input__container{
+    width: 100%;
+  }
   .c-input{
     order: 1;
     padding: 1rem;
-    width: 80%;
+    width: 100%;
     border: none;
+    border-radius: 5px;
     &::placeholder {
       font-weight: bold;
     }
+  }
+  .c-small{
+    color: red;
+    display: none;
+  }
+  .c-small.u-small__active{
+    display: inline-block;
   }
   @media (min-width: 950px) {
     .c-button {
@@ -374,7 +385,16 @@ body {
       max-width: 140px;
     }
     .c-input {
+      width: 90%;
+    }
+    .c-input__container{
       width: 25%;
+      position: relative;
+      .c-small{
+        color: red;
+        position: absolute;
+        margin-top: 5px;
+      }
     }
   }
 }
