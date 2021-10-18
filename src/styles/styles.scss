@@ -179,7 +179,7 @@ body {
     }
   }
 }
-.slick-track{
+.slick-track {
   padding: 0 !important;
 }
 .slick-dots {
@@ -198,9 +198,9 @@ body {
 /* Style products */
 .c-products {
   margin: 0 auto;
-  padding: 0rem .5rem;
+  padding: 0rem 0.5rem;
   @media (min-width: 950px) {
-    padding: 0rem 1rem;
+    padding: 0rem 1rem 2rem;
     width: 80%;
   }
 }
@@ -298,7 +298,7 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-.c-button{
+.c-button {
   color: $white;
   background: $black;
   font-weight: bold;
@@ -311,16 +311,16 @@ body {
   grid-area: button;
   display: none;
 }
-.c-product__infos:hover .c-button{
+.c-product__infos:hover .c-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .2s all ease;
-  &:hover{
+  transition: 0.2s all ease;
+  &:hover {
     transform: skew(15deg);
   }
 }
-.c-off{
+.c-off {
   top: 0;
   right: 0;
   position: absolute;
@@ -329,7 +329,7 @@ body {
   clip-path: polygon(65% 0, 100% 35%, 100% 0);
   width: 200px;
   height: 200px;
-  &::before{
+  &::before {
     content: "OFF";
     color: $white;
     top: 15px;
@@ -337,8 +337,56 @@ body {
     position: absolute;
     font-weight: 900;
   }
-  
 }
 .slick-slide {
   margin: 0 5px;
+  @media (min-width:950px) {
+    margin: 0 20px;
+  }
+}
+
+/* Style newsletter */
+.c-newsletter {
+  background-color: #f2f2f2;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  .c-button {
+    order: 2;
+    height: 50px;
+    width: 90%;
+  }
+  .c-input {
+    order: 1;
+    padding: 1rem;
+    width: 80%;
+    border: none;
+    &::placeholder {
+      font-weight: bold;
+    }
+  }
+  @media (min-width: 950px) {
+    .c-button {
+      order: 2;
+      height: 50px;
+      width: 20%;
+    }
+    .c-input {
+      width: 25%;
+    }
+  }
+}
+.c-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  @media (min-width: 950px){
+    flex-direction: row;
+  }
 }

@@ -1,6 +1,6 @@
 const form = document.querySelector(".c-form");
-const inputName = document.querySelector("c-input__name");
-const inputMail = document.querySelector("c-input__mail");
+const inputName = document.querySelector(".js-name");
+const inputMail = document.querySelector(".js-mail");
 const urlNews = "https://corebiz-test.herokuapp.com/api/v1/newsletter";
 
 const sendData = () => {
@@ -21,7 +21,6 @@ const sendData = () => {
   });
   XHR.open("POST", urlNews, true);
   XHR.send(newObj);
-  console.log(newObj);
 };
 form.addEventListener("submit", (event) => {
   event.preventDefault();
