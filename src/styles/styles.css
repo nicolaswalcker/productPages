@@ -260,4 +260,31 @@ body {
 .c-mobile__link:hover {
   background: #f8475f;
 }
+
+/* Style main */
+.c-banner__carousel .c-banner__image {
+  height: 200px;
+}
+
+@media (min-width: 950px) {
+  .c-banner__carousel .c-banner__image {
+    height: 400px;
+  }
+}
+
+.slick-dots {
+  bottom: 0;
+}
+
+.slick-dots li button:before {
+  color: #fff;
+  opacity: .75;
+  font-size: .75rem;
+  line-height: 0;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: .5;
+}
 /*# sourceMappingURL=styles.css.map */

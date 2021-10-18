@@ -26,13 +26,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"
     />
-    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
   </head>
   <body>
-    
     <header class="c-header">
-     
       <button class="c-btn-mobile js-mobile"></button>
       <div class="c-mobile__menu js-menu">
         <a class="c-mobile__link" href="#">Minha Conta</a>
@@ -45,13 +43,13 @@
       />
       <div class="c-input">
         <input
-        type="search"
-        name="search"
-        id="search"
-        class="c-header__search"
-        placeholder="O que está procurando?"
-      />
-      <button class="c-search__button"><i class="fas fa-search"></i></button>
+          type="search"
+          name="search"
+          id="search"
+          class="c-header__search"
+          placeholder="O que está procurando?"
+        />
+        <button class="c-search__button"><i class="fas fa-search"></i></button>
       </div>
       <a class="c-account__button" href="#">
         <i class="far fa-user"></i>
@@ -68,18 +66,37 @@
     </header>
     <main class="l-main">
       <div class="c-banner__carousel">
-        <div><img src="/public/img/Banner.jpg" alt="" /></div>
-        <div><img src="/public/img/Banner.jpg" alt="" /></div>
-        <div><img src="/public/img/Banner.jpg" alt="" /></div>
+        <div>
+          <img class="c-banner__image" src="/public/img/Banner.jpg" alt="" />
+        </div>
+        <div>
+          <img class="c-banner__image" src="/public/img/Banner.jpg" alt="" />
+        </div>
+        <div>
+          <img class="c-banner__image" src="/public/img/Banner.jpg" alt="" />
+        </div>
       </div>
       <section class="c-products">
-        <div class="c-products__carousel">
-        </div>
+        <h2 class="c-section__title-text">Mais Vendidos</h2>
+        <div class="c-products__carousel"></div>
       </section>
       <section class="c-newsletter">
-        <form class="c-form" action="https://corebiz-test.herokuapp.com/api/v1/newsletter" method="POST" enctype="multipart/form-data">
-          <input class="c-input__name" type="text" placeholder="Digite seu nome" />
-          <input class="c-input__mail" type="email" placeholder="Digite seu email" />
+        <form
+          class="c-form"
+          action="https://corebiz-test.herokuapp.com/api/v1/newsletter"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input
+            class="c-input__name"
+            type="text"
+            placeholder="Digite seu nome"
+          />
+          <input
+            class="c-input__mail"
+            type="email"
+            placeholder="Digite seu email"
+          />
           <button class="js-submit__button" type="submit">Eu quero!</button>
         </form>
       </section>
