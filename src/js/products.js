@@ -32,52 +32,56 @@ window.addEventListener("load", (e) => {
           var productCard = `
           <div class="c-product">
               <img class="c-product__image" src='${productImage}'/>
-              <h2 class="c-product__name">${productName}</h2>
-              <ul class="c-product__stars>
-                <li class="c-product__star"> ${
-                  productStars > 0 ? starFilled : starNonFilled
-                } </li>
-                <li class="c-product__star"> ${
-                  productStars > 1 ? starFilled : starNonFilled
-                } </li>
-                <li class="c-product__star"> ${
-                  productStars > 2 ? starFilled : starNonFilled
-                } </li>
-                <li class="c-product__star"> ${
-                  productStars > 3 ? starFilled : starNonFilled
-                } </li>
-                <li class="c-product__star"> ${
-                  productStars > 4 ? starFilled : starNonFilled
-                } </li>
-              </ul>
-              <p class="${
-                productListPrice == null
-                  ? "c-principal__prize"
-                  : "c-secondary__prize"
-              }">${
-            productListPrice == null
-              ? "<span class='c-product__text'>por </span>" +
-                numberToReal(productPrice)
-              : "<span class='c-product__text'>de </span>" +
-                numberToReal(productPrice)
-          }</p>
+              <div class="c-product__infos">
+                <h2 class="c-product__name">${productName}</h2>
+                <ul class="c-product__stars>
+                  <li class="c-product__star"> ${
+                    productStars > 0 ? starFilled : starNonFilled
+                  } </li>
+                  <li class="c-product__star"> ${
+                    productStars > 1 ? starFilled : starNonFilled
+                  } </li>
+                  <li class="c-product__star"> ${
+                    productStars > 2 ? starFilled : starNonFilled
+                  } </li>
+                  <li class="c-product__star"> ${
+                    productStars > 3 ? starFilled : starNonFilled
+                  } </li>
+                  <li class="c-product__star"> ${
+                    productStars > 4 ? starFilled : starNonFilled
+                  } </li>
+                </ul>
+                <p class="${
+                  productListPrice == null
+                    ? "c-principal__prize"
+                    : "c-secondary__prize"
+                }">${
+              productListPrice == null
+                ? "<span class='c-product__text'>por </span>" +
+                  numberToReal(productPrice)
+                : "<span class='c-product__text'>de </span>" +
+                  numberToReal(productPrice)
+            }</p>
 
-              <p class="c-principal__prize">${
-                productListPrice != null
-                  ? "<span class='c-product__text'>por </span>" +
-                    numberToReal(productListPrice)
-                  : ""
-              }</p>
-              <p class="c-product__installment-quantity">${
-                product.installments.length > 0
-                  ? product.installments[0].quantity
-                  : ""
-              }</p>
-              <p class="c-product__installment-value">${
-                product.installments.length > 0
-                  ? numberToReal(product.installments[0].value)
-                  : ""
-              }</p>
+                <p class="c-principal__prize">${
+                  productListPrice != null
+                    ? "<span class='c-product__text'>por </span>" +
+                      numberToReal(productListPrice)
+                    : ""
+                }</p>
+                <p class="c-product__installment">
+                <span>${
+                  product.installments.length > 0
+                    ? "ou em " + product.installments[0].quantity + "x"
+                    : ""
+                }</span>
+                <span>${
+                  product.installments.length > 0
+                    ? "de " + numberToReal(product.installments[0].value)
+                    : ""
+                }</span>
+                </p>
+              </div>
               <button class="c-button" onclick="buyItem()">COMPRAR</button>
           </div>`;
           $(".c-products__carousel").slick("slickAdd", productCard);
