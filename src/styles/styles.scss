@@ -1,4 +1,135 @@
-.c-star-completed{
-  fill: transparent;
-  stroke: 1px solid blue;
+/* import colors */
+$white: #fff;
+$black: #000;
+$gray: #7A7A7A;
+$purple:#F8475F;
+@mixin resetButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+@mixin buttonConfig($translate) {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  background: $black;
+  transform: translateY($translate);
+  transition: 0.2s all ease;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  /* display: grid;
+  grid-template-rows: auto 1fr auto; */
+  font-family: "Nunito", Courier, monospace;
+}
+/* Style header */
+.c-header {
+  padding: 0.8rem 0rem;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (min-width: 950px) {
+    gap: 3rem;
+    align-items: center;
+  }
+}
+.c-header__image {
+  min-width: 100px;
+  max-width: 35%;
+  order: 2;
+  margin: 0 15% 15px;
+  @media (min-width: 950px) {
+    order: 1;
+    margin:0;
+  }
+}
+.c-input {
+  order: 4;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @media (min-width: 950px) {
+    order: 2;
+    width: 50%;
+  }
+}
+.c-header__search {
+  width: 100%;
+  border: none;
+  padding: 0.25rem 0.25rem 0.35rem;
+  border-bottom: solid 2px $gray;
+}
+.c-search__button {
+  @include resetButton;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.c-cart {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  order: 3;
+  .c-cart__number{
+    background-color: $purple;
+    color: $white;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    padding: .3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.c-account__button {
+  display: none;
+  @media (min-width: 950px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+    text-decoration: none;
+    gap: .5rem;
+    color: $gray;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.c-btn-mobile {
+  @media (min-width: 950px) {
+    display: none;
+  }
+  position: relative;
+  @include resetButton;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s all ease;
+  &::before {
+    @include buttonConfig(-10px);
+    box-shadow: 0 10px 0 $black;
+  }
+  &::after {
+    @include buttonConfig(10px);
+  }
+}
+.c-btn-mobile.u-active {
+  &::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 $black;
+  }
+  &::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
 }

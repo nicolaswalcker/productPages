@@ -26,21 +26,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"
     />
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="./src/styles/styles.css">
   </head>
   <body>
     <header class="c-header">
+      <button class="c-btn-mobile js-mobile"></button>
       <img
         class="c-header__image"
         src="./public/img/site-logo-corebiz-preto-cinza-grande.svg"
         alt="Logo corebiz"
       />
-      <input
+      <div class="c-input">
+        <input
         type="search"
         name="search"
         id="search"
         class="c-header__search"
         placeholder="O que está procurando?"
       />
+      <button class="c-search__button"><i class="fas fa-search"></i></button>
+      </div>
       <a class="c-account__button" href="#">
         <i class="far fa-user"></i>
         <p class="c-account__text">Minha Conta</p>
@@ -51,11 +57,11 @@
           alt="Shopping cart"
           class="c-cart__image"
         />
-        <span class="c-cart__number js-cart__number">0</span>
+        <p class="c-cart__number js-cart__number">0</p>
       </div>
     </header>
     <main class="l-main">
-      <div class="carousel">
+      <div class="c-banner__carousel">
         <div><img src="/public/img/Banner.jpg" alt="" /></div>
         <div><img src="/public/img/Banner.jpg" alt="" /></div>
         <div><img src="/public/img/Banner.jpg" alt="" /></div>
@@ -100,24 +106,26 @@
         </div>
       </section>
     </footer>
-    <script src="src/js/Products/products.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/products.js"></script>
     <script src="src/js/newsletter.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
     <script>
-      $(".carousel").slick({
+      $(".c-banner__carousel").slick({
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         arrows: false,
+        adaptiveHeight: true,
       });
       $(".c-products__carousel").slick({
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 1,
       });
     </script>
   </body>
