@@ -254,7 +254,7 @@ body {
   }
   @media (min-width: 950px) {
     width: 80%;
-    grid-template-rows: 25px 15px 10px 35px 35px 35px;
+    grid-template-rows: 35px 15px 10px 35px 35px 35px;
   }
 }
 .c-product__name {
@@ -262,7 +262,6 @@ body {
   color: $gray;
   grid-area: name;
   text-align: center;
-  margin-bottom: 0.5rem;
 }
 .c-product__infos ul {
   display: flex;
@@ -340,7 +339,7 @@ body {
 }
 .slick-slide {
   margin: 0 5px;
-  @media (min-width:950px) {
+  @media (min-width: 950px) {
     margin: 0 20px;
   }
 }
@@ -353,13 +352,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 2rem 0.5rem;
   .c-button {
     order: 2;
     height: 50px;
     width: 90%;
   }
-  .c-input {
+  .c-input{
     order: 1;
     padding: 1rem;
     width: 80%;
@@ -372,7 +371,7 @@ body {
     .c-button {
       order: 2;
       height: 50px;
-      width: 20%;
+      max-width: 140px;
     }
     .c-input {
       width: 25%;
@@ -386,7 +385,70 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  @media (min-width: 950px){
+  @media (min-width: 950px) {
     flex-direction: row;
   }
+}
+
+/* Style footer */
+.l-footer {
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: $white;
+  padding: 0 1rem;
+  gap: 1.5rem;
+  @media (min-width: 950px) {
+    flex-direction: row;
+  }
+}
+.c-localization{
+  align-self: flex-start;
+}
+.c-localization__title {
+  font-weight: 700;
+}
+.c-line {
+  width: 45px;
+  height: 5px;
+  background: $white;
+}
+.c-footer__cta{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: .75rem;
+  .c-button{
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 80%;
+    color: $black;
+    background: $white;
+    word-wrap: break-word;
+    width: 200px;
+    height: 40px;
+    text-decoration: none;
+    font-weight: 400;
+  }
+}
+.c-footer__partners{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @media (min-width: 950px) {
+    width: auto;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+}
+.c-part__box{
+  display: grid;
+  grid-template-rows:25px 50px;
+  grid-template-columns: 1fr;
+  font-size: 0.625rem;
 }
