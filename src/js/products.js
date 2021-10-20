@@ -55,19 +55,19 @@ window.addEventListener("load", (e) => {
                 <p class="${
                   productListPrice == null
                     ? "c-principal__prize"
-                    : "c-secondary__prize" 
+                    : "c-secondary__prize"
                 }">${
-              productListPrice == null
-                ? "<span class='c-product__text'>por </span>" +
-                  numberToReal(productPrice)
-                : "<span class='c-product__text'>de </span>" +
-                  numberToReal(productPrice)
-            }</p>
+            productListPrice == null
+              ? "<span class='c-product__text'>por </span>" +
+                numberToReal(productPrice)
+              : "<span class='c-product__text'>de </span>" +
+                numberToReal(productListPrice)
+          }</p>
 
                 <p class="c-principal__prize">${
                   productListPrice != null
                     ? "<span class='c-product__text'>por </span>" +
-                      numberToReal(productListPrice)
+                      numberToReal(productPrice)
                     : ""
                 }</p>
                 <p class="c-product__installment">
