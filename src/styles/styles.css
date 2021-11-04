@@ -72,6 +72,16 @@ body {
   }
 }
 
+.c-button {
+  -webkit-transition: .2s all ease;
+  transition: .2s all ease;
+}
+
+.c-button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .c-header__search {
   width: 100%;
   border: none;
@@ -267,7 +277,7 @@ body {
 
 /* Style banner */
 .c-banner__carousel {
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .c-banner__carousel .c-banner__image {
@@ -359,6 +369,13 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  -webkit-transition: .2s all ease;
+  transition: .2s all ease;
+}
+
+.c-product:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .c-product__image {
@@ -376,7 +393,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   justify-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   -ms-grid-rows: 35px 20px 10px 35px 35px 35px;
       grid-template-rows: 35px 20px 10px 35px 35px 35px;
       grid-template-areas: "name" "stars" "secondary_prize" "principal_prize" "installment" "button";

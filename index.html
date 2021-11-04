@@ -66,13 +66,13 @@
     </header>
     <main class="l-main">
       <div class="c-banner__carousel">
-        <div>
+        <div class="c-image__container">
           <img class="c-banner__image" src="./public/img/Banner.jpg" alt="" />
         </div>
-        <div>
+        <div class="c-image__container">
           <img class="c-banner__image" src="./public/img/Banner.jpg" alt="" />
         </div>
-        <div>
+        <div class="c-image__container">
           <img class="c-banner__image" src="./public/img/Banner.jpg" alt="" />
         </div>
       </div>
@@ -81,30 +81,38 @@
         <div class="c-products__carousel"></div>
       </section>
       <section class="c-newsletter">
-        <h2 class="c-newsletter__title">Participe de nossas news com promoções e novidades!</h2>
+        <h2 class="c-newsletter__title">
+          Participe de nossas news com promoções e novidades!
+        </h2>
         <form
           class="c-form"
           action="https://corebiz-test.herokuapp.com/api/v1/newsletter"
           method="POST"
           enctype="multipart/form-data"
         >
-        <div class="c-input__container">
-          <input
-          class="c-input js-name"
-          type="text"
-          placeholder="Digite seu nome"
-        />
-        <small class="c-small js-small__name">Preencha seu nome completo!</small>
-        </div>
           <div class="c-input__container">
             <input
-            class="c-input js-mail"
-            type="email"
-            placeholder="Digite seu email"
-          />
-          <small class="c-small js-small__email">Preencha com um e-mail válido!</small>
+              class="c-input js-name"
+              type="text"
+              placeholder="Digite seu nome"
+            />
+            <small class="c-small js-small__name"
+              >Preencha seu nome completo!</small
+            >
           </div>
-          <button class="c-button js-submit__button" type="submit">Eu quero!</button>
+          <div class="c-input__container">
+            <input
+              class="c-input js-mail"
+              type="email"
+              placeholder="Digite seu email"
+            />
+            <small class="c-small js-small__email"
+              >Preencha com um e-mail válido!</small
+            >
+          </div>
+          <button class="c-button js-submit__button" type="submit">
+            Eu quero!
+          </button>
         </form>
       </section>
     </main>
@@ -118,8 +126,13 @@
         <p class="c-localization__item">+55 11 3090 1039</p>
       </section>
       <section class="c-footer__cta">
-        <a href="#" class="c-button"><img src="./public/img/mail.svg" alt=""> ENTRE EM CONTATO</a>
-        <a href="#" class="c-button"> <img src="./public/img/headphone.svg" alt=""> FALE COM O NOSSO CONSULTOR ONLINE </a>
+        <a href="#" class="c-button"
+          ><img src="./public/img/mail.svg" alt="" /> ENTRE EM CONTATO</a
+        >
+        <a href="#" class="c-button">
+          <img src="./public/img/headphone.svg" alt="" /> FALE COM O NOSSO
+          CONSULTOR ONLINE
+        </a>
       </section>
       <section class="c-footer__partners">
         <div class="c-part__box">
@@ -146,9 +159,10 @@
       $(".c-banner__carousel").slick({
         dots: true,
         infinite: true,
-        speed: 400,
+        speed: 300,
         slidesToShow: 1,
-        arrows: false,
+        adaptiveHeight: true,
+        arrows:false,
       });
       $(".c-products__carousel").slick({
         dots: false,
