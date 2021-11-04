@@ -16,7 +16,6 @@ window.addEventListener("load", (e) => {
       .then((data) => {
         data.forEach((product) => {
           let {
-            productId: productId,
             productName: productName,
             stars: productStars,
             imageUrl: productImage,
