@@ -276,27 +276,12 @@ body {
 }
 
 /* Style banner */
-.c-banner__carousel {
-  /* width: 100vw; */
-}
-
 .c-banner__carousel .c-banner__image {
+  position: relative;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100vw;
-  height: 200px;
-}
-
-@media (min-width: 950px) {
-  .c-banner__carousel .c-banner__image {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    width: 100vw;
-    height: 400px;
-  }
+  height: 22.5vw;
+  left: 8.25px;
 }
 
 .slick-track {
@@ -529,6 +514,7 @@ body {
           clip-path: polygon(65% 0, 100% 35%, 100% 0);
   width: 200px;
   height: 200px;
+  z-index: 10;
 }
 
 .c-off::before {
